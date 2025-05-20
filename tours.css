@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --text-color: #343a40;
+    --accent-color: #28a745;
+    --hover-color: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/* --- PHẦN CSS CỦA THANH NAVBAR ĐƯỢC CHỈNH SỬA --- */
+.container1 { /* Đây là phần bao bọc header và video */
+    position: relative;
+    width: 100%; /* Giữ nguyên, nó là parent được định vị */
+}
+
+.navbar {
+    background-color: var(--primary-color); /* Sử dụng biến màu chính */
+    padding: 10px 20px; /* Tăng padding để thanh navbar cao hơn, đẹp hơn */
+    color: #fff; /* Màu chữ trắng cho toàn bộ navbar (logo/menu-icon) */
+    display: flex;
+    justify-content: flex-start; /* Đã sửa đổi: Đẩy các mục về bên trái */
+    align-items: center;
+    position: fixed; /* Giúp navbar nằm trên video */
+    width: 100vw; /* Từ 100% thành 100vw để khớp với video */
+    left: 0;     /* Đảm bảo navbar bắt đầu từ mép trái viewport */
+    top: 0;
+    z-index: 1000; /* Đảm bảo navbar luôn ở trên cùng */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ nhẹ cho navbar */
+    gap: 30px; /* Thêm khoảng cách giữa logo và menu trên desktop */
+}
+
+.logo img {
+    width: 80px; /* Kích thước logo hợp lý hơn */
+    height: auto;
+    display: block; /* Loại bỏ khoảng trống thừa dưới ảnh */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Mặc định cho desktop */
+}
+
+.menu li a {
+    font-size: 20px;
+    display: block;
+    color: var(--light-color);
+    padding: 12px 18px; /* Tăng padding cho các mục menu */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px; /* Bo góc nhẹ cho các mục menu */
+}
+
+.menu li a:hover {
+    background-color: var(--hover-color); /* Sử dụng biến hover-color đã định nghĩa */
+    color: #fff; /* Đảm bảo màu chữ trắng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nhích lên nhẹ khi hover */
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff; /* Màu cho icon hamburger để dễ nhìn trên nền xanh */
+    display: none; /* Mặc định ẩn trên desktop */
+}
+body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff;
+      color: #333;
+    }
+
+    .header {
+      background: url('https://imagescdn.pystravel.vn/uploads/posts/avatar/1590739634.jpg') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      font-size: 20px;
+    }
+    .header h1 {
+      font-size: 3em;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 0.5em 0.5em;
+      border-radius: 15px;
+    }
+    .tour-section {
+      padding: 40px 60px;
+      background-color: white;
+      margin-bottom: 20px;
+    }
+
+    .tour-title {
+      font-size: 28px;
+      color: #2b5e4d;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+
+    .option-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #e74c3c;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+.cta {
+  text-align: center;
+  margin: 3em 0;
+  justify-self: center;
+}
+
+.cta a {
+  background: #1e90ff;
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta a:hover {
+  background: #0a75d7;
+}
+ /* Media Queries (chỉ chỉnh sửa phần liên quan đến navbar) */
+@media (max-width: 991.98px) { /* Áp dụng cho cả mobile và tablet */
+    .navbar {
+        flex-wrap: wrap; /* Cho phép logo và icon/menu xuống dòng nếu cần */
+        padding: 10px 15px; /* Giảm padding ngang trên mobile */
+        justify-content: space-between; /* Đã sửa đổi: Đẩy logo sang trái, icon sang phải trên mobile */
+        gap: 0; /* Xóa gap khi ở chế độ mobile */
+    }
+    .logo {
+        flex-grow: 1; /* Đảm bảo logo chiếm đủ không gian, đẩy icon sang phải */
+    }
+    .menu-icon {
+        display: block; /* Hiển thị icon hamburger trên mobile và tablet */
+        color: #fff; /* Màu trắng cho icon */
+    }
+    .menu {
+        flex-direction: column; /* Menu hiển thị theo cột */
+        width: 100vw; /* Từ 100% thành 100vw */
+        left: 0; /* Đảm bảo menu bắt đầu từ mép trái viewport */
+        position: absolute;
+        top: 100%; /* Đặt menu ngay dưới navbar */
+        background-color: var(--primary-color); /* Nền cho menu khi mở */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Ẩn mặc định trên mobile, cần JS để hiển thị */
+    }
+    .menu.show { /* Khi JS thêm class .show */
+        display: flex; /* Hiện menu dạng cột */
+    }
+    .menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Đường phân cách giữa các mục menu */
+    }
+    .menu li:last-child {
+        border-bottom: none; /* Bỏ đường phân cách cuối cùng */
+    }
+    .menu li a {
+        text-align: left; /* Căn trái chữ trong menu item */
+        padding: 15px 20px; /* Tăng padding cho item */
+    }
+}
+
+@media (min-width: 992px) { /* Desktop */
+    .menu-icon {
+        display: none; /* Ẩn icon hamburger trên desktop */
+    }
+    .menu {
+        display: flex !important; /* Đảm bảo menu luôn hiển thị ngang trên desktop, ghi đè `display: none` từ JS */
+        flex-direction: row;
+        position: static; /* Trả về vị trí bình thường */
+        background-color: transparent; /* Bỏ nền cho menu */
+        box-shadow: none;
+        width: auto; /* Chiều rộng tự động */
+        left: auto; /* Trả về mặc định */
+    }
+    .menu li {
+        border-bottom: none; /* Bỏ border dưới cho desktop */
+    }
+}

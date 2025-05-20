@@ -1,0 +1,368 @@
+/* --- Định nghĩa biến toàn cục trong :root --- */
+/* --- Định nghĩa biến toàn cục trong :root --- */
+:root {
+    /* Base Colors */
+    --primary-color: #007bff;           /* Màu xanh chính */
+    --secondary-color: #6c757d;         /* Màu xám */
+    --light-color: #f8f9fa;             /* Màu nền sáng */
+    --text-color: #343a40;              /* Màu chữ đen/xám đậm */
+    --accent-color: #28a745;            /* Màu xanh lá accent */
+    --hover-color: #0056b3;             /* Hiệu ứng hover cho primary */
+
+    /* Các biến bổ sung */
+    --light-text-color: #ffffff;        /* Chữ màu trắng dùng cho navbar, button... */
+    --primary-brand-blue: #007bff;      /* Dùng cho tiêu đề, đường viền... */
+    --secondary-accent-orange: #ff9800; /* Màu cam nhấn phụ */
+    --section-bg-color: #ffffff;        /* Nền trắng cho container */
+    --shadow-light: rgba(0, 0, 0, 0.1);   /* Bóng nhẹ */
+    --border-light: #ddd;               /* Màu viền nhẹ */
+    --medium-text-color: #6c757d;       /* Dùng cho các chữ phụ */
+    --hover-accent-orange: #e67e22;     /* Màu cam tối hơn khi hover */
+    --review-bg-color: #f1f1f1;         /* Nền vùng đánh giá */
+    --contact-info-bg-color: #eef2f3;     /* Nền vùng thông tin liên hệ */
+}
+
+/* --- Reset và font chung --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* --- PHẦN CSS CỦA THANH NAVBAR --- */
+.container1 {
+  padding-top: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    color: var(--light-text-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 30px;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li a {
+    font-size: 20px;
+    display: block;
+    color: var(--light-text-color);
+    padding: 12px 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+.menu li a:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--light-text-color);
+    display: none;
+}
+
+/* --- HEADINGS --- */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin: 70px 0 50px;
+    color: var(--primary-brand-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-brand-blue);
+    margin-bottom: 25px;
+    border-left: 6px solid var(--secondary-accent-orange);
+    padding-left: 15px;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* --- CONTAINER CHÍNH --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--section-bg-color);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-light);
+    margin-bottom: 50px;
+}
+
+/* --- CÁC SECTION --- */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* --- FORM --- */
+form {
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: var(--medium-text-color);
+    font-size: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1.05em;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-brand-blue);
+    box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.25);
+    outline: none;
+}
+
+/* --- BUTTONS --- */
+button {
+    background-color: var(--secondary-accent-orange);
+    color: var(--light-text-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 12px rgba(255, 111, 97, 0.25);
+}
+
+button:hover {
+    background-color: var(--hover-accent-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 111, 97, 0.4);
+}
+
+/* --- HIỂN THỊ ĐÁNH GIÁ --- */
+#customer-reviews-container {
+    background-color: var(--review-bg-color);
+    padding: 25px;
+    border: 2px dashed var(--primary-brand-blue);
+    border-radius: 10px;
+    min-height: 150px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: var(--medium-text-color);
+    text-align: center;
+}
+
+#customer-reviews-container:empty:before {
+    content: "Chưa có đánh giá nào. Hãy là người đầu tiên để lại đánh giá!";
+    font-size: 1.1em;
+    color: var(--medium-text-color);
+}
+
+/* --- THÔNG TIN LIÊN HỆ --- */
+.contact-info {
+    background-color: var(--contact-info-bg-color);
+    padding: 25px;
+    border-left: 6px solid var(--secondary-accent-orange);
+    border-radius: 10px;
+    margin-top: 30px;
+    color: var(--medium-text-color);
+    line-height: 1.8;
+}
+
+.contact-info h3 {
+    margin-bottom: 15px;
+    color: var(--primary-brand-blue);
+    font-size: 1.6em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--primary-brand-blue);
+    color: var(--light-text-color);
+    margin-top: 50px;
+    font-size: 0.9em;
+    border-radius: 0;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 991.98px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .logo {
+        flex-grow: 1;
+    }
+    .menu-icon {
+        display: block;
+        color: var(--light-text-color);
+    }
+    .menu {
+        flex-direction: column;
+        width: 100vw;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        background-color: var(--primary-brand-blue);
+        box-shadow: 0 5px 10px var(--shadow-light);
+        display: none;
+    }
+    .menu.show {
+        display: flex;
+    }
+    .menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .menu li:last-child {
+        border-bottom: none;
+    }
+    .menu li a {
+        text-align: left;
+        padding: 15px 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin: 50px 0 40px;
+    }
+
+    h2 {
+        font-size: 1.7em;
+        padding-left: 12px;
+    }
+
+    .container {
+        padding: 25px;
+        margin: 0 20px 40px;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        margin: 40px 0 30px;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        padding-left: 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        margin: 0 10px 30px;
+    }
+
+    label {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+
+    input, select, textarea, button {
+        font-size: 0.95em;
+        padding: 12px;
+        margin-bottom: 18px;
+    }
+
+    button {
+        padding: 12px 22px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 25px 0;
+    }
+
+    .contact-info, #customer-reviews-container {
+        padding: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    .menu-icon {
+        display: none;
+    }
+    .menu {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        width: auto;
+        left: auto;
+    }
+    .menu li {
+        border-bottom: none;
+    }
+}

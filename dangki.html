@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tour - Đánh Giá - Liên Hệ</title>
+    <link rel="stylesheet" href="dangki.css">
+</head>
+<body>
+    <header class="container1">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo du lịch">
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="vechungtoi.html">Về chúng tôi</a></li>
+                <li><a href="bosuutap.html">Bộ sưu tập</a></li>
+                <li><a href="tours.html">Tour</a></li>
+                <li><a href="dangki.html">Đăng ký</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Đăng ký tours du lịch</h1>
+
+    <div class="container">
+        <!-- Form đăng ký -->
+        <section id="registration-section">
+            <h2>Thông Tin Đăng Ký Tour</h2>
+            <form id="registration-form">
+                <label for="tour">Chọn Tour:</label>
+                <select id="tour" name="tour" required>
+                    <option value="">-- Vui lòng chọn tour --</option>
+                    <option value="phuquoc3n2d">Phú Quốc 3 ngày 2 đêm</option>
+                    <option value="phuquoc4n3d">Phú Quốc 4 ngày 3 đêm</option>
+                    <option value="halong3n2d">Vịnh Hạ Long 3 ngày 2 đêm</option>
+                    <option value="halong4n3d">Vịnh Hạ Long 4 ngày 3 đêm</option>
+                    <option value="catba3n2d">Đảo Cát Bà 3 ngày 2 đêm</option>
+                    <option value="catba4n3d">Đảo Cát Bà 4 ngày 3 đêm</option>
+                    <option value="lyson3n2d">Đảo Lý Sơn 3 ngày 2 đêm</option>
+                    <option value="lyson4n3d">Đảo Lý Sơn 4 ngày 3 đêm</option>
+                    <option value="cham2n1d">Cù Lao Chàm 2 ngày 1 đêm</option>
+                    <option value="cham3n2d">Cù Lao Chàm 3 ngày 2 đêm</option>
+                    <option value="condao3n2d">Côn Đảo 3 ngày 2 đêm</option>
+                    <option value="condao4n3d">Côn Đảo 4 ngày 3 đêm</option>
+                </select>
+
+                <label for="name-reg">Họ và tên:</label>
+                <input type="text" id="name-reg" name="name" required>
+
+                <label for="email-reg">Email:</label>
+                <input type="email" id="email-reg" name="email" required>
+
+                <label for="phone-reg">Số điện thoại:</label>
+                <input type="tel" id="phone-reg" name="phone" required>
+
+                <label for="num_adults-reg">Số người lớn:</label>
+                <input type="number" id="num_adults-reg" name="num_adults" value="1" min="1">
+
+                <label for="num_children-reg">Số trẻ em:</label>
+                <input type="number" id="num_children-reg" name="num_children" value="0" min="0">
+
+                <button type="submit">Đăng Ký Tour</button>
+            </form>
+        </section>
+
+        <!-- Đánh giá -->
+        <section id="review-display-section">
+            <h2>Đánh Giá Của Khách Hàng</h2>
+            <div id="customer-reviews-container"></div>
+        </section>
+
+        <!-- Form đánh giá -->
+        <section id="review-form-section">
+            <h2>Để lại đánh giá của bạn</h2>
+            <form id="review-form">
+                <label for="tour-review">Tour đã tham gia:</label>
+                <select id="tour-review" name="tour-review" required>
+                    <option value="">-- Vui lòng chọn tour --</option>
+                    <option value="phuquoc3n2d">Phú Quốc 3 ngày 2 đêm</option>
+                    <option value="phuquoc4n3d">Phú Quốc 4 ngày 3 đêm</option>
+                    <option value="halong3n2d">Vịnh Hạ Long 3 ngày 2 đêm</option>
+                    <option value="halong4n3d">Vịnh Hạ Long 4 ngày 3 đêm</option>
+                    <option value="catba3n2d">Đảo Cát Bà 3 ngày 2 đêm</option>
+                    <option value="catba4n3d">Đảo Cát Bà 4 ngày 3 đêm</option>
+                    <option value="lyson3n2d">Đảo Lý Sơn 3 ngày 2 đêm</option>
+                    <option value="lyson4n3d">Đảo Lý Sơn 4 ngày 3 đêm</option>
+                    <option value="cham2n1d">Cù Lao Chàm 2 ngày 1 đêm</option>
+                    <option value="cham3n2d">Cù Lao Chàm 3 ngày 2 đêm</option>
+                    <option value="condao3n2d">Côn Đảo 3 ngày 2 đêm</option>
+                    <option value="condao4n3d">Côn Đảo 4 ngày 3 đêm</option>
+                </select>
+
+                <label for="rating">Đánh giá:</label>
+                <select id="rating" name="rating">
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+
+                <label for="comment">Bình luận:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                <button type="submit">Gửi Đánh Giá</button>
+            </form>
+        </section>
+
+        <!-- Liên hệ -->
+        <section id="contact-section">
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <p>Vui lòng điền vào biểu mẫu dưới đây để liên hệ với chúng tôi:</p>
+            <form id="contact-form">
+                <label for="name-contact">Họ và tên:</label>
+                <input type="text" id="name-contact" name="name" required>
+
+                <label for="email-contact">Email:</label>
+                <input type="email" id="email-contact" name="email" required>
+
+                <label for="subject">Tiêu đề:</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Nội dung:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Gửi Tin Nhắn</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Thông Tin Liên Hệ Trực Tiếp</h3>
+                <p>Địa chỉ: Tòa nhà P001, tầng 1, quận Thanh Xuân, Hà Nội</p>
+                <p>Điện thoại: 0335094563</p>
+                <p>Email: HAQocentour@gmail.com</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Trang Web Du Lịch</p>
+    </footer>
+
+    <script src="dangki.js"></script>
+</body>
+</html>
